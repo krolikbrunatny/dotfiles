@@ -12,6 +12,10 @@ ln -sf "$DOTS/.hushlogin" "$HOME"/.hushlogin
 mkdir -p "$XDG_CONFIG_HOME"/alacritty
 ln -sf "$DOTS/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 
+# aerospace
+mkdir -p "$XDG_CONFIG_HOME"/aerospace
+ln -sf "$DOTS/aerospace.toml" "$XDG_CONFIG_HOME"/aerospace/aerospace.toml
+
 # tmux
 ln -sf "$DOTS/.tmux.conf" "$HOME"/.tmux.conf
 

@@ -27,4 +27,5 @@ alias repos="cd $REPOS"
 alias ghrepos="cd $GH_REPOS"
 
 alias t="tmux"
+alias tas="tmux attach-session"
 
