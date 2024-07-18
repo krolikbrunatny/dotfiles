@@ -19,4 +19,6 @@ ln -sf "$DOTS/aerospace.toml" "$XDG_CONFIG_HOME"/aerospace/aerospace.toml
 # tmux
 ln -sf "$DOTS/.tmux.conf" "$HOME"/.tmux.conf
 
-
+# skhd
+mkdir -p "$XDG_CONFIG_HOME"/skhd
+ln -sf "$DOTS/skhdrc" "$XDG_CONFIG_HOME"/skhd/skhdrc
