@@ -14,10 +14,13 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # key repeat
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
+
+# natural scrolling
+defaults write -g com.apple.swipescrolldirection -boolean NO
 # ------------------
 
 # ------ Second brain -----
-SECOND_BRAIN="~/Documents/second-brain"
+SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
 # -------------------------
 
