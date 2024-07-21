@@ -22,3 +22,6 @@ ln -sf "$DOTS/.tmux.conf" "$HOME"/.tmux.conf
 # skhd
 mkdir -p "$XDG_CONFIG_HOME"/skhd
 ln -sf "$DOTS/skhdrc" "$XDG_CONFIG_HOME"/skhd/skhdrc
+
+# nvim
+ln -sf "$DOTS/nvim" "$XDG_CONFIG_HOME"/nvim
