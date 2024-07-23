@@ -20,7 +20,7 @@ defaults write -g com.apple.swipescrolldirection -boolean NO
 # ------------------
 
 # ------ Second brain -----
-SECOND_BRAIN="$GH_REPOS/notes"
+export SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
 # -------------------------
 
