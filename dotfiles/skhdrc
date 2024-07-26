@@ -1,4 +1,4 @@
 ralt - l : skhd -t 'ł'
 ralt - e : skhd -t 'ę'
 ralt - s : skhd -t 'ś'
-
+ralt + shift - l : skhd -t 'Ł'
