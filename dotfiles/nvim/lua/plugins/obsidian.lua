@@ -13,6 +13,11 @@ return {
         name = "sb",
         path = "$SECOND_BRAIN",
       },
+      {
+        name = "work",
+        path = "$SECOND_BRAIN/work",
+        strict = true,
+      },
     },
     daily_notes = {
       folder = "daily",

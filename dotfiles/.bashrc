@@ -22,6 +22,7 @@ defaults write -g com.apple.swipescrolldirection -boolean NO
 # ------ Second brain -----
 export SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
+alias sbw="cd $SECOND_BRAIN/work && v ."
 # -------------------------
 
 # ------ tmux -----
@@ -38,3 +39,6 @@ alias repos="cd $REPOS"
 alias ghrepos="cd $GH_REPOS"
 
 alias v="nvim"
+
+## work
+alias wrk="cd $HOME/work"
