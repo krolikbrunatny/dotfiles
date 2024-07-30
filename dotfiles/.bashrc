@@ -43,6 +43,8 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 # ----- k8s -----------
 ## bash completion
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/work-config.yaml"
 # ---------------------
 
 # aliases
