@@ -40,6 +40,11 @@ export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 # -------------------------
 
+# ----- k8s -----------
+## bash completion
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+# ---------------------
+
 # aliases
 alias ..="cd .."
 alias la="ls -la"

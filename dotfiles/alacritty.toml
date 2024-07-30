@@ -1,3 +1,6 @@
+[shell]
+program = "/opt/homebrew/bin/bash"
+
 [font]
 normal.family = "SauceCodePro Nerd Font Mono"
 size = 19.0
