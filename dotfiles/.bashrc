@@ -44,6 +44,10 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 ## bash completion
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
+alias k="kubectl"
+alias ct="kubie ctx"
+alias ns="kubie ns"
+
 export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/work-config.yaml"
 # ---------------------
 
