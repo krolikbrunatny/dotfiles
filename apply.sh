@@ -25,3 +25,6 @@ ln -sf "$DOTS/skhdrc" "$XDG_CONFIG_HOME"/skhd/skhdrc
 
 # nvim
 ln -sf "$DOTS/nvim" "$XDG_CONFIG_HOME"/nvim
+
+# k9s
+ln -sf "$DOTS/k9s" "$XDG_CONFIG_HOME"/k9s
