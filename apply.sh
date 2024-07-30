@@ -27,4 +27,5 @@ ln -sf "$DOTS/skhdrc" "$XDG_CONFIG_HOME"/skhd/skhdrc
 ln -sf "$DOTS/nvim" "$XDG_CONFIG_HOME"/nvim
 
 # k9s
-ln -sf "$DOTS/k9s" "$XDG_CONFIG_HOME"/k9s
+mkdir -p "$XDG_CONFIG_HOME"/k9s
+ln -sf "$DOTS/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
