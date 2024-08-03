@@ -41,5 +41,11 @@ return {
     end,
     notes_subdir = "zettel",
     new_notes_location = "notes_subdir",
+    ui = {
+      checkboxes = {
+        [" "] = { order = 1, char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { order = 5, char = "", hl_group = "ObsidianDone" },
+      },
+    },
   },
 }
