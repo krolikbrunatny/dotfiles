@@ -37,7 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 # -----------------
 
 # -----  gcloud sdk -------
-source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+[[ -r "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 # -------------------------
 
 # ----- k8s -----------
