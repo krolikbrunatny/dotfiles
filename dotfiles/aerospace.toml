@@ -88,3 +88,7 @@ run = 'move-node-to-workspace 10'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 2'
+
+[workspace-to-monitor-force-assignment]
+5 = ['secondary', 'main']        # You can specify multiple patterns. The first matching pattern will be used
+6 = ['secondary', 'main']        # You can specify multiple patterns. The first matching pattern will be used
