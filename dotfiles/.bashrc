@@ -67,3 +67,4 @@ alias v="nvim"
 
 ## work
 alias wrk="cd $HOME/work"
+alias awsl="$HOME/work/scripts/aws_login.sh"
