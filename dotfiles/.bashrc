@@ -51,6 +51,10 @@ alias ns="kubie ns"
 export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/work-config.yaml"
 # ---------------------
 
+# -------- python  ----------
+alias vac="source $(pwd)/.venv/bin/activate"
+# ---------------------------
+
 # aliases
 alias ..="cd .."
 alias la="ls -la"
