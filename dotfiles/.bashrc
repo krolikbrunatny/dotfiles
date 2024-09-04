@@ -4,6 +4,10 @@ export REPOS="$HOME/repos"
 export GH_REPOS="$REPOS/github.com"
 export DOTFILES="$GH_REPOS/dotfiles"
 
+# ------ PS1 ------
+export PS1='\W$(__git_ps1 "(%s)") \$ '
+# -----------------
+
 # ------ MacOS -----
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
