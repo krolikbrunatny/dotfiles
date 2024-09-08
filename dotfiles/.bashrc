@@ -65,6 +65,12 @@ function vac {
 [[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 # ---------------------------
 
+# -------- golang ----------
+mkdir -p $HOME/.go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+# --------------------------
+
 # aliases
 alias ..="cd .."
 alias la="ls -la"
