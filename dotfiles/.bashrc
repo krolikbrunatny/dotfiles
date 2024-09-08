@@ -61,6 +61,10 @@ function vac {
 }
 # ---------------------------
 
+# --------- rust ------------
+[[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+# ---------------------------
+
 # aliases
 alias ..="cd .."
 alias la="ls -la"
