@@ -108,3 +108,6 @@ p() {
 ## work
 alias wrk="cd $HOME/work"
 alias awsl="$HOME/work/scripts/aws_login.sh"
+if [ -d "$HOME/work/scripts/in-path" ]; then
+  export PATH=$PATH:"$HOME/work/scripts/in-path"
+fi
