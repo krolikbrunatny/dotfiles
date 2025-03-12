@@ -80,30 +80,6 @@ alias repos="cd $REPOS"
 alias ghrepos="cd $GH_REPOS"
 
 alias v="nvim"
-# pomodoro aliases
-p() {
-  case "$1" in
-  s)
-    pomodoro start
-    ;;
-  f)
-    pomodoro finish
-    ;;
-  c)
-    pomodoro cancel
-    ;;
-  b)
-    pomodoro break
-    ;;
-  *)
-    echo "Usage: p {s|d|c|b}"
-    echo "  s - start: Begin a Pomodoro session."
-    echo "  f - finish: Complete the current Pomodoro session."
-    echo "  c - cancel: Cancel the current Pomodoro session."
-    echo "  b - break: Start a break after a Pomodoro session."
-    ;;
-  esac
-}
 
 ## work
 alias wrk="cd $HOME/work"
