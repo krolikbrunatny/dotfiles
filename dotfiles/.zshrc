@@ -5,15 +5,12 @@ export GH_REPOS="$REPOS/github.com"
 export DOTFILES="$GH_REPOS/dotfiles"
 
 # ------ PS1 ------
-export PS1='\W$(__git_ps1 "(%s)") \$ '
+# export PS1='\W$(__git_ps1 "(%s)") \$ '
 # -----------------
 
 # ------ MacOS -----
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# disable "default interactive shell is..." warning
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # key repeat
 defaults write -g InitialKeyRepeat -int 10
@@ -87,3 +84,9 @@ alias awsl="$HOME/work/scripts/aws_login.sh"
 if [ -d "$HOME/work/scripts/in-path" ]; then
   export PATH=$PATH:"$HOME/work/scripts/in-path"
 fi
+
+# oh my zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh

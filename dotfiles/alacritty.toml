@@ -1,5 +1,5 @@
 [terminal]
-shell = "/opt/homebrew/bin/bash"
+shell = "/bin/zsh"
 
 [font]
 normal.family = "SauceCodePro Nerd Font Mono"
