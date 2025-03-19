@@ -3,6 +3,7 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export REPOS="$HOME/repos"
 export GH_REPOS="$REPOS/github.com"
 export DOTFILES="$GH_REPOS/dotfiles"
+export DOTFILES_WORK="$GH_REPOS/dotfiles-work"
 
 # ------ PS1 ------
 # export PS1='\W$(__git_ps1 "(%s)") \$ '
@@ -23,7 +24,6 @@ defaults write -g com.apple.swipescrolldirection -boolean NO
 # ------ Second brain -----
 export SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
-alias sbw="cd $SECOND_BRAIN/work && v ."
 # -------------------------
 
 # ------ tmux -----
@@ -78,11 +78,9 @@ alias ghrepos="cd $GH_REPOS"
 
 alias v="nvim"
 
-## work
-alias wrk="cd $HOME/work"
-alias awsl="$HOME/work/scripts/aws_login.sh"
-if [ -d "$HOME/work/scripts/in-path" ]; then
-  export PATH=$PATH:"$HOME/work/scripts/in-path"
+# work
+if [[ -f "$DOTFILES_WORK/dotfiles/.zshrc" ]]; then
+  source "$DOTFILES_WORK/dotfiles/.zshrc"
 fi
 
 # oh my zsh
