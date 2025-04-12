@@ -69,6 +69,10 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 # --------------------------
 
+# ------ java :( --------
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# -----------------------
+
 # aliases
 alias ..="cd .."
 alias la="ls -la"
