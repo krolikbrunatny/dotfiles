@@ -39,12 +39,10 @@ export NVM_DIR="$HOME/.nvm"
 # -----------------
 
 # -----  gcloud sdk -------
-[[ -r "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+[[ -r "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 # -------------------------
 
 # ----- k8s -----------
-## bash completion
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 alias k="kubectl"
 alias ct="kubie ctx"
