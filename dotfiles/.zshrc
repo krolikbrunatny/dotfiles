@@ -74,6 +74,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # aliases
 alias ..="cd .."
 alias la="ls -la"
+alias glm="git log --author=\"$(git config user.name)\""
 
 alias dots="cd $DOTFILES"
 alias repos="cd $REPOS"
