@@ -1,77 +1,85 @@
-# envs
+# ============================================
+# ENVIRONMENT VARIABLES
+# ============================================
 export XDG_CONFIG_HOME="$HOME"/.config
 export REPOS="$HOME/repos"
 export GH_REPOS="$REPOS/github.com"
 export DOTFILES="$GH_REPOS/dotfiles"
 export DOTFILES_WORK="$GH_REPOS/dotfiles-work"
 
-# ------ PS1 ------
-# export PS1='\W$(__git_ps1 "(%s)") \$ '
-# -----------------
-
-# ------ MacOS -----
-# brew
+# ============================================
+# MACOS CONFIGURATION
+# ============================================
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# key repeat
+# Key repeat settings
 defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 1
 
-# natural scrolling
+# Natural scrolling
 defaults write -g com.apple.swipescrolldirection -boolean NO
-# ------------------
 
-# ------ Second brain -----
+# ============================================
+# SECOND BRAIN
+# ============================================
 export SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
-# -------------------------
 
-# ------ tmux -----
+# ============================================
+# TMUX
+# ============================================
 alias t="tmux"
 alias tas="tmux attach-session"
-# -----------------
 
-# ----- nvm -------
+# ============================================
+# NODE VERSION MANAGER
+# ============================================
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# -----------------
-
-# -----  gcloud sdk -------
+# ============================================
+# GOOGLE CLOUD SDK
+# ============================================
 [[ -r "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-# -------------------------
 
-# ----- k8s -----------
-
+# ============================================
+# KUBERNETES
+# ============================================
 alias k="kubectl"
 alias ct="kubie ctx"
 alias ns="kubie ns"
 
 export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/work-config.yaml"
-# ---------------------
 
-# -------- python  ----------
+# ============================================
+# PYTHON
+# ============================================
 function vac {
   source "$(pwd)/.venv/bin/activate"
 }
-# ---------------------------
 
-# --------- rust ------------
+# ============================================
+# RUST
+# ============================================
 [[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-# ---------------------------
 
-# -------- golang ----------
+# ============================================
+# GOLANG
+# ============================================
 mkdir -p $HOME/.go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
-# --------------------------
 
-# ------ java :( --------
+# ============================================
+# JAVA
+# ============================================
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-# -----------------------
 
-# aliases
+# ============================================
+# ALIASES
+# ============================================
 alias ..="cd .."
 alias la="ls -la"
 alias glm="git log --author=\"$(git config user.name)\""
@@ -82,20 +90,24 @@ alias ghrepos="cd $GH_REPOS"
 
 alias v="nvim"
 
-# work
+# ============================================
+# WORK CONFIGURATION
+# ============================================
 if [[ -f "$DOTFILES_WORK/dotfiles/.zshrc" ]]; then
   source "$DOTFILES_WORK/dotfiles/.zshrc"
 fi
 
-# oh my zsh
+# ============================================
+# OH MY ZSH
+# ============================================
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# scripts
-
+# ============================================
+# CUSTOM SCRIPTS
+# ============================================
 function prettify() {
   if [ -z "$1" ]; then
     echo "Usage: prettify <file>"
