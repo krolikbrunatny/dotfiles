@@ -93,3 +93,13 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# scripts
+
+function prettify() {
+  if [ -z "$1" ]; then
+    echo "Usage: prettify <file>"
+    return 1
+  fi
+  jq . "$1" > "$1.pretty" && mv "$1.pretty" "$1"
+}
