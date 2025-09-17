@@ -35,6 +35,10 @@ ln -sf "$DOTS/nvim" "$XDG_CONFIG_HOME"/nvim
 mkdir -p "$XDG_CONFIG_HOME"/k9s
 ln -sf "$DOTS/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 
+# gitignore
+ln -sf "$DOTS/.gitignore" "$HOME/.gitignore"
+git config --global core.excludesfile "$HOME/.gitignore"
+
 # dotfiles-work
 if [[ -d "../dotfiles-work" && -f "../dotfiles-work/apply.sh" ]]; then
   ../dotfiles-work/apply.sh
