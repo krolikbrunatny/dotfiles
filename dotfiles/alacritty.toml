@@ -1,9 +1,0 @@
-[terminal]
-shell = "/bin/zsh"
-
-[font]
-normal.family = "SauceCodePro Nerd Font Mono"
-size = 19.0
-
-[window]
-decorations = "none"

@@ -6,24 +6,12 @@ export REPOS="$HOME/repos"
 export GH_REPOS="$REPOS/github.com"
 export DOTFILES="$GH_REPOS/dotfiles"
 export DOTFILES_WORK="$GH_REPOS/dotfiles-work"
-
-# ============================================
-# MACOS CONFIGURATION
-# ============================================
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Key repeat settings
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
-
-# Natural scrolling
-defaults write -g com.apple.swipescrolldirection -boolean NO
+export SECOND_BRAIN="$GH_REPOS/notes"
+typeset -U path PATH
 
 # ============================================
 # SECOND BRAIN
 # ============================================
-export SECOND_BRAIN="$GH_REPOS/notes"
 alias sb="cd $SECOND_BRAIN"
 
 # ============================================
@@ -32,17 +20,23 @@ alias sb="cd $SECOND_BRAIN"
 alias t="tmux"
 alias tas="tmux attach-session"
 
-# ============================================
-# NODE VERSION MANAGER
-# ============================================
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# Attach each terminal window to the shared session, but never nest tmux in its panes.
+if [[ -z "$TMUX" ]] && command -v tmux &> /dev/null; then
+  tmux new-session -A -s tmax
+fi
 
 # ============================================
-# GOOGLE CLOUD SDK
+# OPENCODE
 # ============================================
-[[ -r "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+export OPENCODE_SCRATCH="$HOME/.opencode/scratch"
+alias o="opencode ."
+alias oe="opencode $OPENCODE_SCRATCH"
+function op() {
+  tmux split-window -h
+  tmux split-window -v
+  tmux select-pane -L
+  opencode .
+}
 
 # ============================================
 # KUBERNETES
@@ -50,8 +44,6 @@ export NVM_DIR="$HOME/.nvm"
 alias k="kubectl"
 alias ct="kubie ctx"
 alias ns="kubie ns"
-
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/work-config.yaml"
 
 # ============================================
 # PYTHON
@@ -61,34 +53,23 @@ function vac {
 }
 
 # ============================================
-# RUST
-# ============================================
-[[ -r "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-
-# ============================================
 # GOLANG
 # ============================================
-mkdir -p $HOME/.go
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-
-# ============================================
-# JAVA
-# ============================================
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export GOPATH="$HOME/.go"
+export PATH="$PATH:$GOPATH/bin"
 
 # ============================================
 # ALIASES
 # ============================================
 alias ..="cd .."
 alias la="ls -la"
-alias glm="git log --author=\"$(git config user.name)\""
+function glm() {
+  git log --author="$(git config user.name)"
+}
 
 alias dots="cd $DOTFILES"
 alias repos="cd $REPOS"
 alias ghrepos="cd $GH_REPOS"
-
-alias v="nvim"
 
 # ============================================
 # WORK CONFIGURATION
@@ -103,13 +84,21 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git)
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+
+# ============================================
+# ATUIN
+# ============================================
+# Replace the default history search with Atuin's searchable, synchronized history.
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
 
 # ============================================
 # CUSTOM SCRIPTS
 # ============================================
 function prettify() {
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     echo "Usage: prettify <file>"
     return 1
   fi

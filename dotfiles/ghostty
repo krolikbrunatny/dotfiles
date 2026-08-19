@@ -1,0 +1,4 @@
+command = /bin/zsh --login
+font-family = Hasklig
+font-size = 19
+macos-titlebar-style = hidden
