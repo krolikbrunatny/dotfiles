@@ -8,6 +8,16 @@ persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
+alt-f1 = 'exec-and-forget m1ddc display 1 set luminance 10'
+alt-f2 = 'exec-and-forget m1ddc display 1 set luminance 20'
+alt-f3 = 'exec-and-forget m1ddc display 1 set luminance 30'
+alt-f4 = 'exec-and-forget m1ddc display 1 set luminance 40'
+alt-f5 = 'exec-and-forget m1ddc display 1 set luminance 50'
+alt-f6 = 'exec-and-forget m1ddc display 1 set luminance 60'
+alt-f7 = 'exec-and-forget m1ddc display 1 set luminance 70'
+alt-f8 = 'exec-and-forget m1ddc display 1 set luminance 80'
+alt-f9 = 'exec-and-forget m1ddc display 1 set luminance 90'
+alt-f10 = 'exec-and-forget m1ddc display 1 set luminance 100'
 
 cmd-alt-h = 'focus left'
 cmd-alt-j = 'focus down'
