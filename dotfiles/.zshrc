@@ -46,6 +46,17 @@ alias ct="kubie ctx"
 alias ns="kubie ns"
 
 # ============================================
+# ATLANTIS
+# ============================================
+function aplan() {
+  nwb stateful atlantis "$1" plan
+}
+
+function aply() {
+  nwb stateful atlantis "$1" apply
+}
+
+# ============================================
 # PYTHON
 # ============================================
 function vac {
