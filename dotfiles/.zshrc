@@ -89,9 +89,11 @@ source "$ZSH/oh-my-zsh.sh"
 # ============================================
 # ATUIN
 # ============================================
-# Replace the default history search with Atuin's searchable, synchronized history.
+# Use Atuin for Ctrl-R while retaining Zsh's normal Up-arrow history navigation.
 if command -v atuin &> /dev/null; then
   eval "$(atuin init zsh)"
+  bindkey "^[[A" up-line-or-history
+  bindkey "^[OA" up-line-or-history
 fi
 
 # ============================================
