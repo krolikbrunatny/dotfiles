@@ -74,6 +74,7 @@ export PATH="$PATH:$GOPATH/bin"
 # ============================================
 alias ..="cd .."
 alias la="ls -la"
+alias adassh="ssh -i ~/.ssh/adapulawska szyszka@adapulawska.org"
 function glm() {
   git log --author="$(git config user.name)"
 }
